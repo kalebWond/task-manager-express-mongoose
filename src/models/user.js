@@ -48,7 +48,7 @@ const userSchema = new mongoose.Schema({
             required: true
         }
     }]
-});
+}, { timestamps: true });
 
 userSchema.statics.findUserByCredentials = async (email, password) => {
     const user = await User.findOne({ email });
